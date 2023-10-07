@@ -49,6 +49,6 @@ func _take_damage(damage : float) -> void:
 		queue_free()
 
 # Detect collision
-func _on_enemy_detector_area_entered(area):
-	if area.is_in_group("Enemy"):
-		_take_damage(1)
+func _on_enemy_detector_body_entered(body):
+	if body.is_in_group("Enemy"):
+		_take_damage(1) # Replace with function body.

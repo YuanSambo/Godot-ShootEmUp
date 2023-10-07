@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbbh6qhw8ku3k"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_gux1h"]
-[ext_resource type="Texture2D" uid="uid://x0e1cyhggx8i" path="res://Pixel Shmup/Ships/ship_0000.png" id="1_xu32d"]
-[ext_resource type="PackedScene" uid="uid://bd71n5ug7tb2m" path="res://bullet.tscn" id="2_yalcl"]
+[ext_resource type="Script" path="res://Player.gd" id="1_0llne"]
+[ext_resource type="PackedScene" uid="uid://bd71n5ug7tb2m" path="res://bullet.tscn" id="2_k4dw4"]
+[ext_resource type="Texture2D" uid="uid://x0e1cyhggx8i" path="res://Pixel Shmup/Ships/ship_0000.png" id="3_hf0af"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rptwg"]
 size = Vector2(35.5, 34)
@@ -11,14 +11,14 @@ size = Vector2(35.5, 34)
 collision_layer = 0
 collision_mask = 0
 motion_mode = 1
-script = ExtResource("1_gux1h")
+script = ExtResource("1_0llne")
 speed = 300.0
-bullet = ExtResource("2_yalcl")
+bullet = ExtResource("2_k4dw4")
 health = 5.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("1_xu32d")
+texture = ExtResource("3_hf0af")
 
 [node name="ShootCooldown" type="Timer" parent="."]
 wait_time = 0.1
@@ -29,10 +29,9 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_rptwg")
 
 [node name="EnemyDetector" type="Area2D" parent="."]
-collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyDetector"]
 shape = SubResource("RectangleShape2D_rptwg")
 
-[connection signal="area_entered" from="EnemyDetector" to="." method="_on_enemy_detector_area_entered"]
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_enemy_detector_body_entered"]

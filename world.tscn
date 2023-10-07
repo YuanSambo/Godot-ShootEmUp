@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu0mxubm6ltxb"]
+[gd_scene load_steps=5 format=3 uid="uid://cu0mxubm6ltxb"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_upv7o"]
-[ext_resource type="PackedScene" uid="uid://bbbh6qhw8ku3k" path="res://player.tscn" id="2_kixhb"]
-[ext_resource type="PackedScene" uid="uid://w580qvc5vma0" path="res://enemy.tscn" id="3_rbwrh"]
+[ext_resource type="PackedScene" uid="uid://bbbh6qhw8ku3k" path="res://Player.tscn" id="2_kixhb"]
+[ext_resource type="PackedScene" uid="uid://w580qvc5vma0" path="res://BaseEnemy.tscn" id="3_rbwrh"]
+[ext_resource type="PackedScene" uid="uid://d36nccyul5bbr" path="res://LinearEnemy.tscn" id="4_a7kq5"]
 
 [node name="World" type="Node"]
 script = ExtResource("1_upv7o")
@@ -17,16 +18,16 @@ color = Color(0.678431, 0.670588, 0.388235, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_kixhb")]
 unique_name_in_owner = true
-position = Vector2(236, 369)
+position = Vector2(256, 568)
 
-[node name="Enemy" parent="." instance=ExtResource("3_rbwrh")]
-position = Vector2(225, 169)
+[node name="LinearEnemy" parent="." instance=ExtResource("4_a7kq5")]
+position = Vector2(400, 104)
 
-[node name="Enemy2" parent="." instance=ExtResource("3_rbwrh")]
-position = Vector2(105, 169)
+[node name="LinearEnemy2" parent="." instance=ExtResource("4_a7kq5")]
+position = Vector2(96, 96)
 
-[node name="Enemy3" parent="." instance=ExtResource("3_rbwrh")]
-position = Vector2(354, 169)
+[node name="BaseEnemy" parent="." instance=ExtResource("3_rbwrh")]
+position = Vector2(240, 96)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

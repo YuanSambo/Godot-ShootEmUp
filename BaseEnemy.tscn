@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://w580qvc5vma0"]
+
+[ext_resource type="Script" path="res://base_enemy.gd" id="1_hq1l6"]
+[ext_resource type="Texture2D" uid="uid://q4kfmd434cyo" path="res://Pixel Shmup/Ships/ship_0009.png" id="2_xeijy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2d5a"]
+size = Vector2(41, 31)
+
+[node name="BaseEnemy" type="CharacterBody2D" groups=["Enemy"]]
+rotation = 3.14159
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_hq1l6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_xeijy")
+
+[node name="ShootCooldown" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.499999, -1.5)
+shape = SubResource("RectangleShape2D_d2d5a")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0.499999, -1.5)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_d2d5a")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

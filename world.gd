@@ -2,7 +2,6 @@ extends Node
 
 @onready var health_ui = $CanvasLayer/HealthUI
 
-
 func _ready():
 	# Set starting healthUI value
 	health_ui.text = str(%Player.health)

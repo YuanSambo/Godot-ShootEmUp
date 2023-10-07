@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu0mxubm6ltxb"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_upv7o"]
+[ext_resource type="PackedScene" uid="uid://bbbh6qhw8ku3k" path="res://player.tscn" id="2_kixhb"]
+[ext_resource type="PackedScene" uid="uid://w580qvc5vma0" path="res://enemy.tscn" id="3_rbwrh"]
+
+[node name="World" type="Node"]
+script = ExtResource("1_upv7o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.678431, 0.670588, 0.388235, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_kixhb")]
+unique_name_in_owner = true
+position = Vector2(236, 369)
+
+[node name="Enemy" parent="." instance=ExtResource("3_rbwrh")]
+position = Vector2(225, 169)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_rbwrh")]
+position = Vector2(105, 169)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_rbwrh")]
+position = Vector2(354, 169)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthUI" type="Label" parent="CanvasLayer"]
+offset_right = 44.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 50
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

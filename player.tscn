@@ -14,6 +14,7 @@ motion_mode = 1
 script = ExtResource("1_gux1h")
 speed = 300.0
 bullet = ExtResource("2_yalcl")
+health = 5.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)

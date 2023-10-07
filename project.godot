@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Godot-ShootEmUp"
-run/main_scene="res://main.tscn"
+run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-CheatManager="*res://CheatManager.gd"
+CheatManager="*res://cheat_manager.gd"
+Events="*res://events.gd"
 
 [display]
 

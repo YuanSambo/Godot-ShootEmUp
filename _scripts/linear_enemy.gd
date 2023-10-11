@@ -1,4 +1,4 @@
-extends "res://base_enemy.gd"
+extends "res://_scripts/base_enemy.gd"
 
 @export var speed : float
 	

@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://cu0mxubm6ltxb"]
 
-[ext_resource type="Script" path="res://world.gd" id="1_upv7o"]
-[ext_resource type="PackedScene" uid="uid://bbbh6qhw8ku3k" path="res://player.tscn" id="2_kixhb"]
-[ext_resource type="PackedScene" uid="uid://w580qvc5vma0" path="res://base_enemy.tscn" id="3_rbwrh"]
-[ext_resource type="PackedScene" uid="uid://cdkrybonvy4wy" path="res://linear_enemy.tscn" id="4_raai3"]
+[ext_resource type="Script" path="res://_scripts/world.gd" id="1_214g1"]
+[ext_resource type="PackedScene" uid="uid://bbbh6qhw8ku3k" path="res://_scenes/player.tscn" id="2_kixhb"]
+[ext_resource type="PackedScene" uid="uid://w580qvc5vma0" path="res://_scenes/base_enemy.tscn" id="3_rbwrh"]
+[ext_resource type="PackedScene" uid="uid://cdkrybonvy4wy" path="res://_scenes/linear_enemy.tscn" id="4_raai3"]
 
 [node name="World" type="Node" node_paths=PackedStringArray("player", "health_ui")]
-script = ExtResource("1_upv7o")
+script = ExtResource("1_214g1")
 player = NodePath("Player")
 health_ui = NodePath("CanvasLayer/HealthUI")
 

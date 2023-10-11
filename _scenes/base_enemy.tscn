@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://w580qvc5vma0"]
 
-[ext_resource type="Script" path="res://base_enemy.gd" id="1_txytq"]
-[ext_resource type="Texture2D" uid="uid://q4kfmd434cyo" path="res://Pixel Shmup/Ships/ship_0009.png" id="2_xeijy"]
-[ext_resource type="PackedScene" uid="uid://c2wa5yq38k0n2" path="res://hit_box_component.tscn" id="3_q534c"]
-[ext_resource type="PackedScene" uid="uid://cjseueu36xflq" path="res://health_component.tscn" id="4_ykrmi"]
+[ext_resource type="Script" path="res://_scripts/base_enemy.gd" id="1_se8ug"]
+[ext_resource type="Texture2D" uid="uid://q4kfmd434cyo" path="res://Pixel Shmup/Ships/ship_0009.png" id="2_060f8"]
+[ext_resource type="PackedScene" uid="uid://c2wa5yq38k0n2" path="res://_scenes/hit_box_component.tscn" id="3_otkva"]
+[ext_resource type="PackedScene" uid="uid://cjseueu36xflq" path="res://_scenes/health_component.tscn" id="4_b0e6x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2d5a"]
 size = Vector2(40.5, 30)
@@ -16,13 +16,13 @@ rotation = 3.14159
 collision_layer = 0
 collision_mask = 0
 motion_mode = 1
-script = ExtResource("1_txytq")
+script = ExtResource("1_se8ug")
 health_component = NodePath("HealthComponent")
 hitbox_component = NodePath("HitBoxComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("2_xeijy")
+texture = ExtResource("2_060f8")
 
 [node name="ShootCooldown" type="Timer" parent="."]
 wait_time = 0.1
@@ -33,7 +33,7 @@ position = Vector2(2.563e-06, -1)
 shape = SubResource("RectangleShape2D_d2d5a")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
-[node name="HitBoxComponent" parent="." groups=["Enemy"] instance=ExtResource("3_q534c")]
+[node name="HitBoxComponent" parent="." groups=["Enemy"] instance=ExtResource("3_otkva")]
 collision_layer = 2
 collision_mask = 1
 
@@ -42,7 +42,7 @@ position = Vector2(2.66731e-06, -1)
 scale = Vector2(1.38825, 0.9795)
 shape = SubResource("RectangleShape2D_4n7kw")
 
-[node name="HealthComponent" parent="." instance=ExtResource("4_ykrmi")]
+[node name="HealthComponent" parent="." instance=ExtResource("4_b0e6x")]
 max_health = 1.0
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

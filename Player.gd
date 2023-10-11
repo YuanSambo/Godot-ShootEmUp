@@ -1,10 +1,12 @@
 extends CharacterBody2D
+class_name Player
 
+@export var health_component : HealthComponent
+@export var hitbox_component : HitBoxComponent
 
 @export var speed : float
 @export var bounds_offset := 40
 @export var bullet : PackedScene
-@export var health : float = 100
 
 @onready var shoot_cooldown: Timer = $ShootCooldown
 @onready var screen_size : Vector2 = Vector2.ZERO
@@ -12,6 +14,9 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
+	
+	#Signals
+	hitbox_component.on_hit.connect(on_player_hit)
 	
 func _get_input() -> void:
 	var input_direction = Input.get_vector("left", "right", "up", "down")
@@ -40,15 +45,8 @@ func shoot() -> void:
 	projectile.start(position + Vector2(0, -10))
 
 
-func _take_damage(damage : float) -> void:
-	health -= damage
-	Events.player_health_updated.emit(health)
-	print("Player Health: " + str(health))
+func on_player_hit(damage : float) -> void:
+	health_component.damage(damage)
 	
-	if health <= 0:
-		queue_free()
-
-# Detect collision
-func _on_enemy_detector_body_entered(body):
-	if body.is_in_group("Enemy"):
-		_take_damage(1) # Replace with function body.
+	Events.player_health_updated.emit(health_component.health)
+	print("Player Health: " + str(health_component.health))

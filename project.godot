@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-CheatManager="*res://cheat_manager.gd"
+CheatManager="*res://CheatManager.gd"
 Events="*res://events.gd"
 
 [display]

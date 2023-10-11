@@ -1,5 +1,5 @@
-extends Node2D
 class_name  HealthComponent
+extends Node2D
 
 @export var max_health : float
 var health : float

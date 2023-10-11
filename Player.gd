@@ -1,5 +1,5 @@
-extends CharacterBody2D
 class_name Player
+extends CharacterBody2D
 
 @export var health_component : HealthComponent
 @export var hitbox_component : HitBoxComponent

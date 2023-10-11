@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://w580qvc5vma0"]
 
-[ext_resource type="Script" path="res://BaseEnemy.gd" id="1_txytq"]
+[ext_resource type="Script" path="res://base_enemy.gd" id="1_txytq"]
 [ext_resource type="Texture2D" uid="uid://q4kfmd434cyo" path="res://Pixel Shmup/Ships/ship_0009.png" id="2_xeijy"]
 [ext_resource type="PackedScene" uid="uid://c2wa5yq38k0n2" path="res://hit_box_component.tscn" id="3_q534c"]
 [ext_resource type="PackedScene" uid="uid://cjseueu36xflq" path="res://health_component.tscn" id="4_ykrmi"]

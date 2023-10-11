@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bbbh6qhw8ku3k"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_0llne"]
+[ext_resource type="Script" path="res://player.gd" id="1_0llne"]
 [ext_resource type="PackedScene" uid="uid://bd71n5ug7tb2m" path="res://bullet.tscn" id="2_k4dw4"]
 [ext_resource type="Texture2D" uid="uid://x0e1cyhggx8i" path="res://Pixel Shmup/Ships/ship_0000.png" id="3_hf0af"]
 [ext_resource type="PackedScene" uid="uid://c2wa5yq38k0n2" path="res://hit_box_component.tscn" id="4_gy0wp"]

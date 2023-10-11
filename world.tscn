@@ -5,8 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://w580qvc5vma0" path="res://BaseEnemy.tscn" id="3_rbwrh"]
 [ext_resource type="PackedScene" uid="uid://cdkrybonvy4wy" path="res://linear_enemy.tscn" id="4_raai3"]
 
-[node name="World" type="Node"]
+[node name="World" type="Node" node_paths=PackedStringArray("player", "health_ui")]
 script = ExtResource("1_upv7o")
+player = NodePath("Player")
+health_ui = NodePath("CanvasLayer/HealthUI")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

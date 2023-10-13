@@ -9,9 +9,10 @@ func _ready():
 	Events.player_health_updated.connect(_update_health_ui)
 	
 func setup_ui():
-	var player_health = player.health_component.health
-	_update_health_ui(player_health)
-	
+#	var player_health = player.health_component.health
+#	_update_health_ui(player_health)
+	pass
+#
 func _update_health_ui(health : float ):
 	health_ui.text = str(health)
 	

@@ -19,10 +19,10 @@ motion_mode = 1
 script = ExtResource("1_0llne")
 health_component = NodePath("HealthComponent")
 hitbox_component = NodePath("HitBoxComponent")
-speed = 300.0
 bullet = ExtResource("2_k4dw4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 scale = Vector2(2, 2)
 texture = ExtResource("3_hf0af")
 

@@ -4,12 +4,19 @@ extends CharacterBody2D
 @export var health_component : HealthComponent
 @export var hitbox_component : HitBoxComponent
 
-@export var speed : float
+#@export var speed : float
 @export var bounds_offset := 40
 @export var bullet : PackedScene
 
 @onready var shoot_cooldown: Timer = $ShootCooldown
 @onready var screen_size : Vector2 = Vector2.ZERO
+
+
+
+@export var speed = 400
+@export var rotation_speed = 2
+
+var rotation_direction = 0
 
 
 func _ready() -> void:
@@ -19,11 +26,17 @@ func _ready() -> void:
 	hitbox_component.on_hit.connect(on_player_hit)
 	
 func _get_input() -> void:
-	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed
+	
+	look_at(get_global_mouse_position())
+	
+	if position.distance_to(get_global_mouse_position()) >= 10:
+		velocity = transform.x * Input.get_axis("down", "up") * speed
+	else:
+		velocity = Vector2.ZERO
 
 func _process(delta: float) -> void:
 	_get_input()
+		
 		
 	position.x = clamp(position.x,bounds_offset,screen_size.x-bounds_offset)
 	position.y = clamp(position.y,bounds_offset,screen_size.y-bounds_offset)
@@ -31,7 +44,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("fire"):
 		shoot()
 		
-func _physics_process(delta:float) -> void:
+func _physics_process(delta):
+	_get_input()
 	move_and_slide()
 	
 func shoot() -> void:

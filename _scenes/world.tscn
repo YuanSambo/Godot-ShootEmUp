@@ -20,22 +20,26 @@ color = Color(0.678431, 0.670588, 0.388235, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_kixhb")]
 unique_name_in_owner = true
-position = Vector2(256, 568)
+position = Vector2(361, 390)
 
 [node name="BaseEnemy" parent="." instance=ExtResource("3_rbwrh")]
+visible = false
 position = Vector2(240, 96)
 
 [node name="LinearEnemy" parent="." instance=ExtResource("4_raai3")]
+visible = false
 position = Vector2(240, 208)
 collision_layer = 2
 collision_mask = 1
 
 [node name="LinearEnemy2" parent="." instance=ExtResource("4_raai3")]
+visible = false
 position = Vector2(101, 208)
 collision_layer = 2
 collision_mask = 1
 
 [node name="LinearEnemy3" parent="." instance=ExtResource("4_raai3")]
+visible = false
 position = Vector2(388, 208)
 collision_layer = 2
 collision_mask = 1
